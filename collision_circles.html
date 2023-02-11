@@ -1,0 +1,28 @@
+<!-- Simple algorithm to detect collision between circles -->
+<!-- Checks 2 scenarios of possible overlapping or touching by calculating distance between circle centers using the Pythagorean theorem -->
+
+<script>
+    // x and y represent centers of the cricles
+    const circle1 = {x: 10, y: 10, radius: 300};
+    const circle2 = {x: 500, y: 500, radius: 150};
+
+    // Imaginary right triangle
+    let dx = circle2.x - circle1.x; // Horizontal distance between centers aka base of the traingle
+    let dy = circle2.y - circle1.y; // Vertical distance between centers aka height of the triangle
+
+    // Get the distance aka hypotenuse of the triangle via Pythagorean theorem
+    let distance = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+
+    // Get the sum of radii of the circles
+    let sumOfRadii = circle1.radius + circle2.radius;
+
+    if (distance < sumOfRadii) {
+        // Collision
+    }
+    else if ( distance == sumOfRadii) {
+        // Touch
+    }
+    else {
+        // No collision
+    }
+</script>
